@@ -2,26 +2,28 @@
   "name": "mimosa-volo",
   "preferGlobal": "false",
   "version": "0.0.1",
-  "homepage": "http://www.mimosajs.com <= OR PUT YOUR GITHUB/WEBSITE",
-  "author": "YOUR NAME HERE",
-  "description": "DESCRIBE YOUR MODULE",
+  "homepage": "https://github.com/dbashford/mimosa-volo",
+  "author": "David Bashford",
+  "description": "A thin volo wrapper for the Mimosa workflow tool.",
   "contributors": [
     {
-      "name": "YOUR NAME",
-      "email": "YOUR EMAIL"
+      "name": "David Bashford",
+      "email": "dbashford@hotmail.com"
     }
   ],
   "repository": {
     "type": "git",
-    "url": "YOUR REPO URL"
+    "url": "https://github.com/dbashford/mimosa-volo"
   },
   "keywords": [
     "mimosa",
     "mmodule",
-    "ADD MORE KEYWORDS TO HELP PEOPLE FIND YOUR MODULE ON NPM"
+    "volo"
   ],
   "dependencies": {
-    "logmimosa": "0.2.1"
+    "logmimosa": "0.3.0",
+    "volo": "0.2.6",
+    "wrench": "1.4.4"
   },
   "license": "MIT",
   "engines": {

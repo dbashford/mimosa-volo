@@ -11,13 +11,3 @@ Add `'mimosa-volo'` to your list of modules.  That's all!  Mimosa will install t
 
 ## Functionality
 
-
-## Default Config
-
-```
-```
-
-## Example Config
-
-```
-```

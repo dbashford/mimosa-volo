@@ -14,7 +14,7 @@ exports.registerCommand = (program, retrieveConfig) ->
       return logger.error "You must provide a name of a library to import."
 
     prepArgs(args)
-    retrieveConfig (config) ->
+    retrieveConfig false, (config) ->
       dirs = directories(config)
       logger.debug "All directories found:\n#{dirs.join('\n')}"
 

@@ -1,7 +1,6 @@
 {
   "name": "mimosa-volo",
-  "preferGlobal": "false",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "homepage": "https://github.com/dbashford/mimosa-volo",
   "author": "David Bashford",
   "description": "A thin volo wrapper for the Mimosa workflow tool.",
@@ -21,7 +20,7 @@
     "volo"
   ],
   "dependencies": {
-    "logmimosa": "0.3.0",
+    "logmimosa": "0.3.1",
     "volo": "0.2.6",
     "wrench": "1.4.4"
   },

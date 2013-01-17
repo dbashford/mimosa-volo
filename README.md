@@ -3,7 +3,7 @@ mimosa-volo
 
 ## Overview
 
-This a mimosa module that will import GitHub dependencies using the Volo tool.  It also serves as an example for how to create Mimosa modules that enrich Mimosa will extra commands.
+This a mimosa module that will import GitHub dependencies using the Volo tool.  It also serves as an example for how to create Mimosa modules that enrich Mimosa with extra commands.
 
 Valid with Mimosa version `0.7.2` and above.
 

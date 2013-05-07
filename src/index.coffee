@@ -35,7 +35,7 @@ exports.registerCommand = (program, retrieveConfig) ->
 
           logger.debug "And changing directory back to [[ #{currentDir} ]]"
           process.chdir(currentDir)
-          process.stdin.destroy()
+          process.exit(0)
 
         runVolo(args, desiredDir, config.watch.javascriptDir, done)
 

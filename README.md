@@ -7,7 +7,7 @@ This a mimosa module that will import GitHub dependencies using the Volo tool.  
 
 Valid with Mimosa version `0.7.2` and above.
 
-For more information regarding Mimosa, see http://mimosajs.com
+For more information regarding Mimosa, see http://mimosa.io
 
 ## Usage
 

@@ -5,7 +5,8 @@ fs = require 'fs'
 
 volo = require 'volo'
 wrench = require 'wrench'
-logger = require 'logmimosa'
+
+logger = require('logmimosa')
 
 exports.registerCommand = (program, retrieveConfig) ->
 
@@ -13,8 +14,13 @@ exports.registerCommand = (program, retrieveConfig) ->
     unless typeof args[0] is 'string'
       return logger.error "You must provide a name of a library to import."
 
-    prepArgs(args)
-    retrieveConfig false, (config) ->
+    args.unshift('add')                 # adding add
+    opts = args.pop()                   # nuking commanders last parm
+    args.push('-amd') unless opts.noamd
+    args.push('-f')                     # forcing force =p
+
+    retrieveConfig false, !!opts.mdebug, (config) ->
+      logger = config.log
       dirs = directories(config)
       logger.debug "All directories found:\n#{dirs.join('\n')}"
 
@@ -39,12 +45,6 @@ exports.registerCommand = (program, retrieveConfig) ->
 
         runVolo(args, desiredDir, config.watch.javascriptDir, done)
 
-prepArgs = (args) ->
-  args.unshift('add')                 # adding add
-  opts = args.pop()                   # nuking commanders last parm
-  if opts.debug then logger.setDebug()
-  args.push('-amd') unless opts.noamd
-  args.push('-f')                     # forcing force =p
 
 runVolo = (args, destDirectory, jsDir, callback) ->
   logger.debug "Running volo with the following args:\n#{JSON.stringify(args, null, 2)}"
@@ -72,7 +72,7 @@ register = (program, callback) =>
     .command('import')
     .description("import libraries from github via the command line using volo")
     .option("-n, --noamd",  "will load the non-amd version")
-    .option("-D, --debug", "run in debug mode")
+    .option("-D, --mdebug", "run in debug mode")
     .action(callback)
     .on '--help', ->
       logger.green('  This command exposes basic volo (http://volojs.org/) functionality to import and install')

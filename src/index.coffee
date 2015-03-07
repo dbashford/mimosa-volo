@@ -19,7 +19,11 @@ exports.registerCommand = (program, retrieveConfig) ->
     args.push('-amd') unless opts.noamd
     args.push('-f')                     # forcing force =p
 
-    retrieveConfig false, !!opts.mdebug, (config) ->
+    retrieveConfigOpts =
+      mdebug: !!opts.mdebug
+      buildFirst: false
+
+    retrieveConfig retrieveConfigOpts, (config) ->
       logger = config.log
       dirs = directories(config)
       logger.debug "All directories found:\n#{dirs.join('\n')}"
@@ -67,7 +71,7 @@ directories = (config) ->
     fs.statSync(fullPath).isDirectory() and f.indexOf(config.watch.javascriptDir) >= 0
   .sort()
 
-register = (program, callback) =>
+register = (program, logger, callback) =>
   program
     .command('import')
     .description("import libraries from github via the command line using volo")
